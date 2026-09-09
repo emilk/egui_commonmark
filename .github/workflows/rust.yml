@@ -20,20 +20,11 @@ jobs:
     - name: Cargo fmt
       run: cargo fmt --check -q
 
-    - name: Test
-      run: cargo test --features macros
-
-  snapshots:
-    name: Snapshot tests
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Install a Vulkan software renderer
+    - name: Install a Vulkan software renderer for the snapshot tests
       run: sudo apt-get update && sudo apt-get install -y mesa-vulkan-drivers
 
-    - name: Run snapshot tests
-      run: cargo test -p egui_commonmark --features macros --test tables
+    - name: Test
+      run: cargo test --features macros
       env:
         WGPU_BACKEND: vulkan
 
