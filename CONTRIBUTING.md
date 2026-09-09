@@ -10,6 +10,14 @@ as one of the examples depend on it.
 
 `cargo test --features macros`
 
+### Snapshot tests
+
+Rendering is checked with [egui_kittest](https://github.com/emilk/egui/tree/master/crates/egui_kittest#snapshot-testing)
+snapshot tests in `egui_commonmark/tests/`. When you change how something renders,
+update the snapshots and commit the new PNG files:
+
+`UPDATE_SNAPSHOTS=1 cargo test --features macros`
+
 
 ### Debugging the proc macros
 
