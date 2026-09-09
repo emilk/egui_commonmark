@@ -76,6 +76,7 @@ eframe = { version = "0.36.0", default-features = false, features = [
     "links"
 ] }
 
+egui_kittest = { version = "0.36.0", features = ["snapshot", "wgpu"] }
 image = { version = "0.25", default-features = false, features = ["png"] }
 egui_commonmark_macros = { workspace = true }                              # Tests won't build otherswise
 
